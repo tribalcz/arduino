@@ -3,13 +3,13 @@
 class RELAY{
     private:
         int pin;
-        bool stav = LOW;
-        void nastav(bool);
+        bool state = LOW;
+        void set(bool);
 
     public:
         RELAY(int);
-        void zapni();
-        void vypni();
-        void prepni();
-        bool vratStav();        
+        void on();
+        void off();
+        void switch();
+        bool returnState();        
 };
