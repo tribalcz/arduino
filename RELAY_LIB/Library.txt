@@ -1,0 +1,10 @@
+nameRrelay library
+version=1.0.0
+author=Martin Suchodol
+maintainer=Martin Suchodol <tribal.cz@gmail.com>
+sentence=A library designed to control the relay.
+paragraph=*
+category=*
+url=
+architectures=*
+includes=*
