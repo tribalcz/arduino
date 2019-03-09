@@ -4,30 +4,30 @@
 RELAY::RELAY(int p) {
     pin = p;
     pinMode(pin, OUTPUT);
-    digitalWrite(pin, stav);
+    digitalWrite(pin, state);
 }
 
-void RELAY::zapni() {
-    nastav(HIGH);
+void RELAY::on() {
+    set(HIGH);
 }
 
-void RELAY::vypni() {
-    nastav(LOW);
+void RELAY::of() {
+    set(LOW);
 }
 
-void RELAY::prepni(){
-    nastav(!stav); //nastavý relé na obrácenou hodnotu 0->1/1->0
+void RELAY::switch(){
+    set(!state); //nastavý relé na obrácenou hodnotu 0->1/1->0
 }
 
-void RELAY::nastav(bool s) {
-    stav = s;
-    Serial.print("Nastavuji ");
-    Serial.print(stav);
-    Serial.print(" na pinu ");
+void RELAY::set(bool s) {
+    state = s;
+    Serial.print("set ");
+    Serial.print(state);
+    Serial.print(" to pin ");
     Serial.println(pin);
-    digitalWrite(pin, stav);
+    digitalWrite(pin, state);
 }
 
-bool RELAY::vratStav() {
-    return stav;
+bool RELAY::returnState() {
+    return state;
 }
